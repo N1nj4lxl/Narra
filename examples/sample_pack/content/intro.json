@@ -1,0 +1,50 @@
+{
+  "passages": [
+    {
+      "id": "demo.start",
+      "title": "First Day",
+      "tags": ["location:dorm", "time:morning", "menu:start"],
+      "body": "Welcome to campus! Your grades are currently {stat:Grades}.",
+      "media": {"image": "dorm_morning.jpg"},
+      "on_enter": [
+        {"type": "set_stat", "params": {"name": "Grades", "value": 75}},
+        {"type": "set_flag", "params": {"name": "Orientation", "value": true}}
+      ],
+      "choices": [
+        {
+          "text": "Head to breakfast",
+          "to": "demo.breakfast",
+          "effects": [
+            {"type": "add_stat", "params": {"name": "Energy", "amount": 5}}
+          ]
+        },
+        {
+          "text": "Stay in your room",
+          "to": "demo.room",
+          "condition": "stat(\"Energy\") < 50",
+          "effects": [
+            {"type": "add_stat", "params": {"name": "Stress", "amount": 5}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "demo.breakfast",
+      "title": "Breakfast Club",
+      "tags": ["location:cafeteria"],
+      "body": "The cafeteria smells like pancakes.",
+      "choices": [
+        {"text": "Return", "to": "return"}
+      ]
+    },
+    {
+      "id": "demo.room",
+      "title": "Quiet Morning",
+      "tags": ["location:dorm"],
+      "body": "You take a quiet moment to prepare for the day.",
+      "choices": [
+        {"text": "Return", "to": "return"}
+      ]
+    }
+  ]
+}

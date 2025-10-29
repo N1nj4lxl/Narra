@@ -1,0 +1,11 @@
+{
+  "id": "sample.core",
+  "name": "Sample Pack",
+  "version": "0.1.0",
+  "author": "NarraForge",
+  "licence": "MIT",
+  "engine_compat": ">=0.1.0",
+  "provides": ["demo"],
+  "assets": ["images"],
+  "strings": []
+}
