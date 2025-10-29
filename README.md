@@ -11,4 +11,13 @@ NarraForge is a data-driven narrative engine for visual novel-style games with a
 
 ## Status
 
-The project is in the specification and planning stage. The documents above capture the baseline expectations for implementing NarraForge across runtime, tooling, and mod support layers.
+The repository now includes a Python reference implementation of the NarraForge runtime core, loader, validator, and command line tooling. The implementation focuses on the data-driven systems outlined in the design documents:
+
+- Typed data models for manifests, passages, choices, and effects.
+- A deterministic runtime engine that evaluates conditions, applies effects, and advances passages.
+- A strict pack loader that reads JSON manifests and story files from content packs.
+- A validator that surfaces duplicate passages and condition syntax issues.
+- A `narraforge` CLI with `validate` and `inspect` subcommands for day-to-day workflows.
+- An `examples/sample_pack` directory that demonstrates the expected pack layout.
+
+Future work will expand on the control panel UI, additional validator rules, persistence, and plug-in sandboxes described in the specs.
